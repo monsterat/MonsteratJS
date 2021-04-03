@@ -23,7 +23,7 @@ app.set("layout", "./layouts/layout");
 app.set("view engine", "ejs");
 
 // routes
-const homeRouter = require("./routes/home.js");
+const homeRouter = require("./routes/dashboard.js");
 const fitnessRouter = require("./routes/fitness.js");
 const foodRouter = require("./routes/food.js");
 const taskRouter = require("./routes/task.js");
