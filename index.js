@@ -23,14 +23,14 @@ app.set("layout", "./layouts/layout");
 app.set("view engine", "ejs");
 
 // routes
-// const homeRouter = require("./routes/home.js");
+const homeRouter = require("./routes/home.js");
 const fitnessRouter = require("./routes/fitness.js");
 const foodRouter = require("./routes/food.js");
 const taskRouter = require("./routes/task.js");
 const dashboardRouter = require("./routes/dashboard.js");
 const settingsRouter = require("./routes/settings.js");
 
-// app.use("/", homeRouter);
+app.use("/", homeRouter);
 app.use("/fitness", fitnessRouter);
 app.use("/food", foodRouter);
 app.use("/task", taskRouter);
