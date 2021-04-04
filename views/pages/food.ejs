@@ -1,20 +1,20 @@
 <link rel="stylesheet" href="/static/css/food.css" />
 
+<div class="col-md-12 text-center">
+  <h1 class="display-4 text-center mb-4">Log your food! 😋</h1>
+</div>
+
 <div class="main">
   
   <link rel="stylesheet" href="/static/css/food.css" />
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <!---
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-  -->
-  <h1>FOOD PAGE</h1>
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
   
   <div class="col-md-12 text-center" >
-    <button id="addMealButton"  type="button" class="btn btn-light" data-toggle="modal" data-target="#addMealModal">Add Meal</button>
-  
+    <button id="addMealButton"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#addMealModal">Add Meal</button>  
   </div>
+
+  <br>
+  
     <!-- Add meal modal -->
   
     <div class="modal fade" id="addMealModal" tabindex="-1" role="dialog" aria-labelledby="addMealModal" aria-hidden="true">
@@ -58,252 +58,11 @@
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-              <button id="addMealButton" type="button"  data-dismiss="modal"type="submit" onclick="myFunction()" class="btn btn-primary">Login</button>
+              <button id="addMealButton" type="button"  data-dismiss="modal"type="submit" onclick="myFunction()" class="btn btn-primary">Submit</button>
           </div>
           </div>
       </div>
     </div>
-  
-  
-  <!--
-  <div id="foodHistory">
-
-    <table  id="foodHistoryTable" class="table">
-      <thead>
-        <tr>
-          <th  scope="col"><p id="date1"></p></th>
-          <th  scope="col"><p id="date2"></p></th>
-          <th  scope="col"><p id="date3"></p></th>
-          <th  scope="col"><p id="date4"></p></th>
-          <th  scope="col"><p id="date5"></p></th>
-          <th  scope="col"><p id="date6"></p></th>
-          <th  scope="col"><p id="date7"></p></th>
-          <th  scope="col"><p id="date8"></p></th>
-
-        </tr>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col"><p  id="day1"class="weekday"></p></th>
-          <th scope="col"><p  id="day2"class="weekday"></p></th>
-          <th scope="col"><p  id="day3"class="weekday"></p></th>
-          <th scope="col"><p  id="day4"class="weekday"></p></th>
-          <th scope="col"><p  id="day5"class="weekday"></p></th>
-          <th scope="col"><p  id="day6"class="weekday"></p></th>
-          <th scope="col"><p  id="day7"class="weekday"></p></th>
-        </tr>
-      </thead>
-      <tbody id="tbodyForMeals">
-        <tr>
-          <th scope="row">Breakfast &#9660;</th>
-          <td>
-            <div>
-             <p id="MBName"></p> 
-            </div>
-          </td>
-          <td>
-            <div>
-             <p id="TUESBName"></p> 
-            </div>
-          </td>
-          <td>
-            <div>
-             <p id="WBName">Meal Name : None</p> 
-            </div>
-          </td>
-          <td>
-            <div>
-             <p id="THUBName"> Meal Name : None</p> 
-  
-            </div>
-          </td>
-          <td>
-            <div>
-             <p id="FBName">Meal Name : None</p> 
-  
-            </div>
-          </td>
-          <td>
-            <div>
-              <p id="SATBName">Meal Name : None</p> 
-  >
-             </div>
-          </td>
-          <td>
-            <div>
-              <p id="SUNBName">Meal Name : None</p> 
-  
-             </div>
-          </td>
-        </tr>
-        
-        <tr>
-          <th scope="row">Lunch &#9660;</th>
-          <td>
-            <div>
-             <p id="MLName">Meal Name : None</p> 
-            </div>
-          </td>
-          <td>
-            <div>
-             <p id="TUESLName">Meal Name : None</p> 
-  
-            </div>
-          </td>
-          <td>
-            <div>
-             <p id="WLName">Meal Name : None</p> 
-            </div>
-          </td>
-          <td>
-            <div>
-             <p id="THULName">Meal Name : None</p> 
-  
-            </div>
-          </td>
-          <td>
-            <div>
-             <p id="FLName">Meal Name : None</p> 
-  
-            </div>
-          </td>
-          <td>
-            <div>
-              <p id="SATLName">Meal Name : None</p> 
-  
-             </div>
-          </td>
-          <td>
-            <div>
-              <p id="SUNLName">Meal Name : None</p> 
-  
-             </div>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">Dinner &#9660;</th>
-          <td>
-            <div>
-             <p id="MDName">Meal Name : None</p> 
-  
-            </div>
-          </td>
-          <td>
-            <div>
-             <p id="TUESDName">Meal Name : None</p> 
-  
-            </div>
-          </td>
-          <td>
-            <div>
-             <p id="WDName">Meal Name : None</p> 
-  
-            </div>
-          </td>
-          <td>
-            <div>
-             <p id="THUDName">Meal Name : None</p> 
-  
-            </div>
-          </td>
-          <td>
-            <div>
-             <p id="FDName">Meal Name : None</p> 
-  
-            </div>
-          </td>
-          <td>
-            <div>
-              <p id="SATDName">Meal Name : None</p> 
-             </div>
-          </td>
-          <td>
-            <div>
-              <p id="SUNDName">Meal Name : None</p> 
-             </div>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">Total Nutritional Value</th>
-          <td>
-            <div>
-             <p id="MCalorie">Calories : 0.0</p>
-             <p id="MProtein">Protein : 0.0g </p>
-            </div>
-          </td>
-          <td>
-            <div>
-  
-             <p id="TUESCalorie">Calories : 0.0</p>
-             <p id="TUESProtein">Protein : 0.0g </p>
-            </div>
-          </td>
-          <td>
-            <div>
-  
-             <p id="WCalorie">Calories : 0.0</p>
-             <p id="WProtein">Protein : 0.0g </p>
-            </div>
-          </td>
-          <td>
-            <div>
-  
-             <p id="THUCalorie">Calories : 0.0</p>
-             <p id="THUProtein">Protein : 0.0g </p>
-            </div>
-          </td>
-          <td>
-            <div>
-             <p id="FCalorie">Calories : 0.0</p>
-             <p id="FProtein">Protein : 0.0g </p>
-            </div>
-          </td>
-          <td>
-            <div>
-              <p id="SATCalorie">Calories : 0.0</p>
-              <p id="SATProtein">Protein : 0.0g </p>
-             </div>
-          </td>
-          <td>
-            <div>
-              <p id="SUNCalorie">Calories : 0.0</p>
-              <p id="SUNProtein">Protein : 0.0g </p>
-             </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  
-  </div>
-  -->
-  <!--
-  <script>
-    window.onload = function () {
-    
-    var chart = new CanvasJS.Chart("chartContainer", {
-      animationEnabled: true,
-      theme: "light2",
-      title:{
-        text: "Simple Line Chart"
-      },
-      data: [{        
-        type: "line",
-            indexLabelFontSize: 16,
-        dataPoints: [
-          { y: 2600 },
-          { y: 2700 },
-          { y: 3000, indexLabel: "\u2191 highest",markerColor: "red", markerType: "triangle" },
-          { y: 2400 },
-          { y: 2500 },
-          { y: 2100 , indexLabel: "\u2193 lowest",markerColor: "DarkSlateGrey", markerType: "cross" }
-        ]
-      }]
-    });
-    chart.render();
-    
-    }
-    </script>
-  <div id="chartContainer" style="height: 370px; width: 100%;"></div>
--->
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
@@ -377,7 +136,6 @@
         <td>
           <div>
             <p id="SATBName"></p> 
->
            </div>
         </td>
         <td>

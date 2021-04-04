@@ -139,10 +139,6 @@ body {
     height: min-content;
 }
 
-div {
-    padding-bottom: 15px
-}
-
 .form-control {
     display: block;
     width: 100%;

@@ -1,157 +1,179 @@
 <link rel="stylesheet" href="/static/css/fitness.css" />
 
-<h1>FITNESS PAGE</h1>
 
-<!--<h2><%= activities[0].activity_name %></h2>
-<h2><%= activities[0].activity_duration %></h2>
-<h2><%= activities[0].activity_date %></h2>-->
 
-<div class="fitness-container">
-  <div class="left-container">
-    <h3>Health Profile:</h3>
-    <table>
-      <tr>
-        <td>Weight</td>
-        <td><%= user[0].weight %></td>
-      </tr>
-      <tr>
-        <td>Height</td>
-        <td><%= user[0].height %></td>
-      </tr>
-      <tr>
-        <td>Gender</td>
-        <td><%= user[0].gender %></td>
-      </tr>
-      <tr>
-        <td>Age</td>
-        <td>
-          <%= new Date().getFullYear() - user[0].dob.toString().slice(11,15) %>
-        </td>
-      </tr>
-      <tr>
-        <td>BMI</td>
-        <td></td>
-      </tr>
-    </table>
-  </div>
+<body>
 
-  <div class="right-container">
-    <h3>Activities:</h3>
+<div class="col-md-12 text-center">
+    <h1 class="display-4 text-center mb-4">Get Active!🏃‍♂️ </h1>
+</div>
 
-    <div class="col-md-12 text-center">
-      <button
-        type="button"
-        class="btn btn-light"
-        data-toggle="modal"
-        data-target="#createActivity"
-      >
-        Log an Activity
-      </button>
-    </div>
-    <!-- sign up modal -->
-    <div
-      class="modal fade"
-      id="createActivity"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="createActivity"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="createActivity">New Activity</h5>
+  <!-- New activity modal -->
+  <div
+  class="modal fade"
+  id="createActivity"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="createActivity"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createActivity">New Activity</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form
+          id="add-activity"
+          class="needs-validation"
+          method="POST"
+          action="/fitness"
+          novalidate
+        >
+          <div class="form-row" style="margin-top: 15px">
+            <div class="col">
+              <select
+                id="selectlist"
+                name="selectlist"
+                class="custom-select"
+                required
+              >
+                <option value="" selected disabled>Type</option>
+                <option value="Running">Running</option>
+                <option value="Cycling">Cycling</option>
+                <option value="Swimming">Swimming</option>
+                <option value="Sports">Sports</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select an activity type.
+              </div>
+            </div>
+            <div class="col">
+              <input
+                id="date"
+                name="date"
+                type="text"
+                class="form-control"
+                placeholder="Activity Date"
+                onfocus="(this.type='date')"
+                required
+              />
+              <div class="invalid-feedback">Please provide a date.</div>
+            </div>
+          </div>
+          <div class="form-row" style="margin-top: 15px">
+            <div class="col">
+              <input
+                id="duration"
+                name="duration"
+                type="text"
+                class="form-control"
+                placeholder="Duration"
+                required
+              />
+              <div class="invalid-feedback">
+                Please provide a valid duration in minutes.
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
             <button
               type="button"
-              class="close"
+              class="btn btn-light"
               data-dismiss="modal"
-              aria-label="Close"
             >
-              <span aria-hidden="true">&times;</span>
+              Cancel
+            </button>
+            <button id="submit" class="btn btn-primary" type="submit">
+              Submit form
             </button>
           </div>
-          <div class="modal-body">
-            <form
-              id="add-activity"
-              class="needs-validation"
-              method="POST"
-              action="/fitness"
-              novalidate
-            >
-              <div class="form-row" style="margin-top: 15px">
-                <div class="col">
-                  <select
-                    id="selectlist"
-                    name="selectlist"
-                    class="custom-select"
-                    required
-                  >
-                    <option value="" selected disabled>Type</option>
-                    <option value="Running">Running</option>
-                    <option value="Cycling">Cycling</option>
-                    <option value="Swimming">Swimming</option>
-                    <option value="Sports">Sports</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    Please select an activity type.
-                  </div>
-                </div>
-                <div class="col">
-                  <input
-                    id="date"
-                    name="date"
-                    type="text"
-                    class="form-control"
-                    placeholder="Activity Date"
-                    onfocus="(this.type='date')"
-                    required
-                  />
-                  <div class="invalid-feedback">Please provide a date.</div>
-                </div>
-              </div>
-              <div class="form-row" style="margin-top: 15px">
-                <div class="col">
-                  <input
-                    id="duration"
-                    name="duration"
-                    type="text"
-                    class="form-control"
-                    placeholder="Duration"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please provide a valid duration in minutes.
-                  </div>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-light"
-                  data-dismiss="modal"
-                >
-                  Cancel
-                </button>
-                <button id="submit" class="btn btn-primary" type="submit">
-                  Submit form
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
-
-    <table>
-      <% for (let i = 0; i < activities.length; i++) { %>
-      <tr>
-        <td><%= activities[i].activity_name%></td>
-        <td><%= activities[i].activity_duration%></td>
-        <td><%= activities[i].activity_date.toString().slice(0,15)%></td>
-      </tr>
-      <% } %>
-    </table>
   </div>
 </div>
+
+<div class="row">
+  <!-- Health Profile -->
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Health Profile</h5>
+          <table>
+            <tr>
+              <td>Weight</td>
+              <td><%= user[0].weight %></td>
+            </tr>
+            <tr>
+              <td>Height</td>
+              <td><%= user[0].height %></td>
+            </tr>
+            <tr>
+              <td>Gender</td>
+              <td><%= user[0].gender %></td>
+            </tr>
+            <tr>
+              <td>Age</td>
+              <td>
+                <%= new Date().getFullYear() - user[0].dob.toString().slice(11,15) %>
+              </td>
+            </tr>
+            <tr>
+              <td>BMI</td>
+              <td></td>
+            </tr>
+          </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activities -->
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h5 class="card-title">Your Recent Activities</h5>
+          </div>
+          <div class="col">
+            <!-- Modal Button -->
+              <div class="col-md-12 text-right">      
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#createActivity"
+                >
+                  Log an Activity
+                </button>    
+            </div>      
+          </div>
+        </div>
+
+        
+        <table>
+          <% for (let i = 0; i < activities.length; i++) { %>
+          <tr>
+            <td><%= activities[i].activity_name%></td>
+            <td><%= activities[i].activity_duration%></td>
+            <td><%= activities[i].activity_date.toString().slice(0,15)%></td>
+          </tr>
+          <% } %>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 
 <script src="/static/js/fitness.js" defer></script>
