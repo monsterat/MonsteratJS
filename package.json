@@ -19,6 +19,7 @@
     "express-ejs-layouts": "^2.5.0",
     "jquery": "^3.6.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "pg": "^8.5.1"
   }
 }
