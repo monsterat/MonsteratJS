@@ -28,6 +28,9 @@ function Deleteqry(id, _this) {
   $(_this).closest('tr').remove();
 }
 
+//function to strikethrough
+
+
 //add rows function
 function addItemToTable(taskList) {
   var tbodyForTasks = document.getElementById("tbodyForTasks");
@@ -43,7 +46,6 @@ function addItemToTable(taskList) {
   preparedRowHTML += "</tr>";
   i++;
   tbodyForTasks.innerHTML += preparedRowHTML;
-
 
   var check = document.getElementById("checkbox");
   console.log(check.checked);
