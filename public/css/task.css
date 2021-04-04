@@ -157,6 +157,26 @@ div {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
 }
 
+.custom-checkbox {
+    margin-right: 15px;
+    text-align: center;
+    align-self: center;
+}
+
+[type="checkbox"]:checked + label {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.custom-checkbox label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: currentColor;
+}
+
 .add-items .btn {
     margin-left: .5rem
 }
