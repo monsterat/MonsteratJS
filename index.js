@@ -49,6 +49,6 @@ app.use("/dashboard", dashboardRouter);
 app.use("/settings", settingsRouter);
 app.use("/account", accountRouter);
 
-app.listen(port, () => {
-  console.log(`Server is listening on localhost: ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server is listening on localhost: ${port}`);
+// });
