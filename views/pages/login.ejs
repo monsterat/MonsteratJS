@@ -1,3 +1,4 @@
+
 <body>
   
 
@@ -59,13 +60,13 @@
               <form class="needs-validation" novalidate>
                   <div class="form-row">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="First name" required>
+                      <input type="text" id="firstname" class="form-control" placeholder="First name" required>
                       <div class="invalid-feedback">
                         Please fill your name.
                       </div>
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Last name" required>
+                      <input type="text" id="lastname" class="form-control" placeholder="Last name" required>
                       <div class="invalid-feedback">
                         Please fill your name.
                       </div>
@@ -74,13 +75,13 @@
 
                   <div class="form-row" style="margin-top: 15px">
                       <div class="col">
-                          <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
+                          <input type="email" id="email" class="form-control" id="inputEmail4" placeholder="Email" required>
                           <div class="invalid-feedback">
                             Please enter your email.
                           </div>
                         </div>
                         <div class="col">
-                          <input type="password" class="form-control" id="inputPassword4" placeholder="Password" required>
+                          <input type="password" id="password" class="form-control" id="inputPassword4" placeholder="Password" required>
                           <div class="invalid-feedback">
                             Please create a password.
                           </div>
@@ -89,7 +90,7 @@
                   
                   <div class="form-row" style="margin-top: 15px">
                     <div class="col">
-                      <select class="custom-select" required>
+                      <select class="custom-select" id="gender" required>
                         <option value="" selected disabled>Gender</option>
                         <option value="M">Male</option>
                         <option value="F">Female</option>
@@ -100,7 +101,7 @@
                       </div>
                     </div>                    
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Date of Birth" onfocus="(this.type='date')" required>
+                      <input type="text" id="dob" class="form-control" placeholder="Date of Birth" onfocus="(this.type='date')" required>
                       <div class="invalid-feedback">
                         Please fill your date of birth.
                       </div>
@@ -109,13 +110,13 @@
 
                   <div class="form-row" style="margin-top: 15px">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Height" min = "1" oninput="validity.valid||(value='');" required>
+                      <input type="text" id="height" class="form-control" placeholder="Height" min = "1" oninput="validity.valid||(value='');" required>
                       <div class="invalid-feedback">
                         Please provide a valid height in cm.
                       </div>
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Weight" min = "1" oninput="validity.valid||(value='');" required>
+                      <input type="text" id="weight" class="form-control" placeholder="Weight" min = "1" oninput="validity.valid||(value='');" required>
                       <div class="invalid-feedback">
                         Please provide a valid weigth in kg.
                       </div>
@@ -124,7 +125,7 @@
 
                   <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-                    <button id="submit" class="btn btn-primary" type="submit" onclick="myFunction()">Submit form</button>
+                    <button id="submit" class="btn btn-primary" type="submit" onclick="createUser()">Submit form</button>
                 </div>                
                 </form>
           </div>
@@ -134,7 +135,11 @@
     </div>
 </body>
 
+<script src='bundle.js'> defer </script>
+
 <script>
+  
+  
   // Example starter JavaScript for disabling form submissions if there are invalid fields
   /*(function() {
     'use strict';
@@ -167,9 +172,44 @@
     alert('hi');
   }*/
 
-  function myFunction(){
-    
+  /*const db = require("../database.js");
+
+  //method to create a user
+  router.get("/", (req, res) => {
+    db.any("SELECT * FROM activities;")
+      .then((response) => {
+        res.render("pages/fitness", {
+          title: "Fitness",
+          activities: response,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+  
+  db.any(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    var sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log("1 record inserted");
+    });
+  });
+
+  function createUser(){
+    db.any("INSERT INTO Users (firstname, lastname, email, password, gender, weight, height, dob) VALUES ('Harry', 'Potter','harry@gmail.com','12345','M','76','190','09/01/2000');")
+    .then((response) => {
+      alert('User created');
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }
+  */
+
+  
 
   
   
