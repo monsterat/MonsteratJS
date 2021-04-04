@@ -50,7 +50,7 @@
                             <option value="" selected disabled>Meal Type</option>
                             <option value="Breakfast">Breakfast</option>
                             <option value="Lunch">Lunch</option>
-                            <option value="Dinnner">Dinner</option>
+                            <option value="Dinner">Dinner</option>
                           </select>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-              <button id="addMealButton" type="button"  data-dismiss="modal" onclick="myFunction()" class="btn btn-primary">Login</button>
+              <button id="addMealButton" type="button"  data-dismiss="modal"type="submit" onclick="myFunction()" class="btn btn-primary">Login</button>
           </div>
           </div>
       </div>
@@ -311,7 +311,16 @@
 
   
 
-  <table id="foodHistoryTable" class="table">
+  <table id="foodHistoryTable" class="table" style=" word-wrap:break-word; width: 100%" >
+    <colgroup>
+      <col span="1" style="width: 16%;">
+      <col span="1" style="width: 12%;">
+      <col span="1" style="width: 12%;">
+      <col span="1" style="width: 12%;">
+      <col span="1" style="width: 12%;">
+      <col span="1" style="width: 12%;">
+      <col span="1" style="width: 12%;">
+   </colgroup>
     <thead>
       <tr>
         <th  scope="col"><p id="date1"></p></th>
@@ -340,7 +349,7 @@
         <th scope="row">Breakfast</th>
         <td>
           <div>
-           <p id="MBName"></p> 
+           <p id="MBName" class="foodHistoryCell"></p> 
           </div>
         </td>
         <td>

@@ -5,6 +5,14 @@
     margin-right: auto;
     margin-top: 20px;
 }
+#foodHistoryTable{
+    table-layout: fixed;
+}
+
+.foodHistoryCell{
+    overflow: hidden;
+    word-wrap: break-word;
+}
 
 .cellFloatLeft{
     float: left;
