@@ -1,35 +1,29 @@
 const express = require("express");
 const router = express.Router();
-// const database = require("../database");
-
-// router.get("/", (req, res) => {
-//   database.any("SELECT * FROM users;").then((users) => {
-//     res.render("pages/login", {
-//       title: "Login",
-//       users: users,
-//     });
-//   }).catch((err) => {
-//     console.log("ERROR")
-//     console.log(err);
-//   })
+// const db = require("../database.js");
 
 router.get("/", (req, res) => {
   res.render("pages/login", {
     title: "Login",
   });
-});
-  
-// });
 
+
+//create a user
+// var insertUser;
+// $(enter).on('click', createUser);
+
+
+});
+
+
+
+// function createUser(event) {
+//     event.preventDefault();
+//     //...
+//     thisObject = {course: courseSelect.value, score: scoreText.value, pars: parsText.value, birdies: birdiesText.value};
+//  }
+  
 module.exports = router;
 
-/*database.query("SELECT * FROM users", (err, res) => {
-  if (err) throw err;
 
-  // print the records as a response
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
-});*/
 
