@@ -257,6 +257,7 @@ if(foodList.length>0){
       foodList[zz]["Calories"] =  parseInt(calories);
       foodList[zz]["Protein"] =  parseInt(protein);
       console.log(foodList[zz]);
+      zz = 10000;
     }
     else if (zz === foodList.length){
       console.log("pUSHING >1");
