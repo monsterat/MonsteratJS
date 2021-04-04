@@ -1,8 +1,7 @@
 console.log("HELLO WORLD!");
 
 var foodList = [];
-var totalCalorie = 0;
-var totalProtein = 0;
+
 var foodModal = document.getElementById("addMealModal");
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var i = 0;
@@ -248,14 +247,64 @@ for ( sss = 2; sss < 5; sss++){
 }
   console.log(cellRow);
   document.getElementById("foodHistoryTable").rows[cellRow].cells[cellCol].textContent = meal;
-  totalCalorie += parseInt(calories);
-  totalProtein += parseInt(protein);
-  console.log(totalProtein);
+ 
+if(foodList.length>0){
+  var zz = 0;
+  for (zz = 0; zz <foodList.length; zz++){
+    if (foodList[zz]["Date"] == date && foodList[zz]["Type"] == mealType){
+      console.log(foodList[zz]);
+      foodList[zz]["Name"] =  document.getElementById("foodHistoryTable").rows[cellRow].cells[cellCol].textContent;
+      foodList[zz]["Calories"] =  parseInt(calories);
+      foodList[zz]["Protein"] =  parseInt(protein);
+      console.log(foodList[zz]);
+      zz = 10000;
+    }
+    else if (zz === foodList.length){
+      console.log("pUSHING >1");
+      foodList.push({
+        "Name": meal,
+        "Date": date,
+        "Calories": parseInt(calories),
+        "Protein": parseInt(protein),
+        "Type": mealType
+      });
+    }
+
+  }
+  if (zz === foodList.length){
+    console.log("pUSHING >1");
+    foodList.push({
+      "Name": meal,
+      "Date": date,
+      "Calories": parseInt(calories),
+      "Protein": parseInt(protein),
+      "Type": mealType
+    });
+  }
+}
+else{
+  console.log("pUSHING");
+  foodList.push({
+    "Name": meal,
+    "Date": date,
+    "Calories": parseInt(calories),
+    "Protein": parseInt(protein),
+    "Type": mealType
+  });
+}
+var totalCalorie = 0;
+    var totalProtein = 0;
+for (var zz = 0; zz <foodList.length; zz++){
+    
+    totalCalorie += parseInt(foodList[zz]["Calories"]);
+    totalProtein += parseInt(foodList[zz]["Protein"]);
+  }
+
+  console.log(foodList);
   console.log(totalCalorie);
-    document.getElementById("foodHistoryTable").rows[5].cells[cellCol].textContent = "Calories: " + totalCalorie + "\n\n\n\n Proteins: " + totalProtein; 
-  
+  document.getElementById("foodHistoryTable").rows[5].cells[cellCol].textContent = "Calories: " + totalCalorie + "\n\n\n\n Proteins: " + totalProtein +"g";
 
-
+  console.log(foodList);
 }
 
 

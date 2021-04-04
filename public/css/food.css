@@ -21,6 +21,14 @@ a {
 a:hover {
   color: rgb(230, 190, 204);
 }
+#foodHistoryTable{
+    table-layout: fixed;
+}
+
+.foodHistoryCell{
+    overflow: hidden;
+    word-wrap: break-word;
+}
 
 html {
   background-color: rgb(0, 0, 0);
