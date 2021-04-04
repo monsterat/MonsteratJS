@@ -153,6 +153,9 @@ $.ajax(settings1).done(function (response) {
     console.log(response);
 });
 */
+document.addEventListener("click", function(){
+  document.getElementById("demo").innerHTML = "Hello World!";
+});
 
 
 
