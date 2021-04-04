@@ -1,14 +1,17 @@
 var button = document.getElementById("btn");
-var input = document.getElementById("input_newEntry");
+var inputTaskName = document.getElementById("input_newEntry");
 var ul = document.querySelector("ul");
 
 button.addEventListener("click", function() {
-    var li = `<li class="list-group-item">
-    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-    ${input.value}
-  </li>`
-  $(".list-group").append(li)
+  //create task object
+  var task = []
+    // var li = `<li class="list-group-item">
+    // <input class="checkbox" type="checkbox" value="" aria-label="...">
+    // ${inputTaskName.value};
+  // </li>`
+  // $(".list-group").append(li)
 })
+
 
 
 

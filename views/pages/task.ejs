@@ -1,26 +1,67 @@
 <link rel="stylesheet" href="/static/css/task.css" />
 <script src="/static/js/task.js" defer></script>
 
+<h1 class="heading">TASKS</h1>
+<br></br>
+
 <form>
-    <br></br>
     <div class="input_newEntry">
-      <label for="input_newEntry">Add a new task</label>
-      <input type="text" class="form-control" id="input_newEntry" placeholder="Add a new task here">
+        <label for="input_newEntry">Add a new task here</label>
+        <input type="text" class="form-control" id="input_newEntry" placeholder="Add a new task here">
     </div>
     <div class="form-group">
-      <label for="formGroupExampleInput2">Deadline</label>
-      <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Add deadline">
+        <label for="formGroupExampleInput2">Deadline</label>
+        <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Add deadline">
     </div>
-    <button class="addBtn" id="btn" type="button">Add</button>
-
-    <div class="list">
-        <ul class="list-group">
-       
-        </ul>
+    <div>
+        <label for="difficultyLevel">Difficulty level</label>
+        <select class="dropdown" aria-label="Default select example">
+            <option selected>Select difficulty level</option>
+            <option value="1">Easy</option>
+            <option value="2">Medium</option>
+            <option value="3">Difficulty</option>
+        </select>
     </div>
 
+    <button class="addBtn" id="btn" type="button">Add Task</button>
+    <br></br>
+</form>
 
-    <!-- <table id="tasksTable">
+<!-- start of table list -->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Task Name</th>
+            <th scope="col">Due Date</th>
+            <th scope="col">Difficulty</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <ul class="list-group">
+                </ul>
+            </td>
+            <td>05/04/2021</td>
+            <td>Difficult</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<!-- <table id="tasksTable">
         <thead>
             <tr>
                 <th>ID</th>
