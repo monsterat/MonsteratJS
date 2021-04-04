@@ -15,7 +15,7 @@ const morgan = require("morgan");
 app.use(morgan("dev"));
 
 // port
-const PORT = 3600;
+const { port } = require("./config");
 
 // ejs template engine
 app.use(expressLayouts);
@@ -39,6 +39,6 @@ app.use("/dashboard", dashboardRouter);
 app.use("/settings", settingsRouter);
 app.use("/account", accountRouter);
 
-app.listen(PORT, () => {
-  console.log(`Server is listening on localhost: ` + PORT);
+app.listen(port, () => {
+  console.log(`Server is listening on localhost: ${port}`);
 });
