@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="/static/css/fitness.css" />
 
-<h1>FITNESS PAGE</h1>
-
 <!--<h2><%= activities[0].activity_name %></h2>
 <h2><%= activities[0].activity_duration %></h2>
 <h2><%= activities[0].activity_date %></h2>-->
+<div class="header">
+  <h1>Fitness</h1>
+</div>
 
 <div class="fitness-container">
   <div class="left-container">
@@ -36,19 +37,21 @@
   </div>
 
   <div class="right-container">
-    <h3>Activities:</h3>
+    <div class="right-container-header">
+      <h3>Activities:</h3>
 
-    <div class="col-md-12 text-center">
-      <button
-        type="button"
-        class="btn btn-light"
-        data-toggle="modal"
-        data-target="#createActivity"
-      >
-        Log an Activity
-      </button>
+      <div class="col-md-12 text-center">
+        <button
+          type="button"
+          class="btn btn-light"
+          data-toggle="modal"
+          data-target="#createActivity"
+        >
+          Log an Activity
+        </button>
+      </div>
     </div>
-    <!-- sign up modal -->
+
     <div
       class="modal fade"
       id="createActivity"
@@ -143,10 +146,15 @@
     </div>
 
     <table>
+      <tr>
+        <th>Activity name</th>
+        <th>Activity duration</th>
+        <th>Activity date</th>
+      </tr>
       <% for (let i = 0; i < activities.length; i++) { %>
       <tr>
         <td><%= activities[i].activity_name%></td>
-        <td><%= activities[i].activity_duration%></td>
+        <td><%= activities[i].activity_duration%> mins</td>
         <td><%= activities[i].activity_date.toString().slice(0,15)%></td>
       </tr>
       <% } %>
