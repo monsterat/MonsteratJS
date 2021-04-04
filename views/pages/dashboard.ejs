@@ -1,1 +1,34 @@
-<h1>DASHBOARD</h1>
+<link rel="stylesheet" href="/static/css/dashboard.css" />
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="/static/js/dashboard.js" defer></script>
+<script>
+  //var activities = `<%-JSON.stringify(activities)%>`;
+  var activities = `<%-JSON.stringify(activities)%>`;
+  console.log(JSON.parse(activities));
+  var activities_parsed = JSON.parse(activities);
+  //console.log("HELLO TEST" + activities);
+  //console.log(JSON.parse(activities));
+</script>
+
+<div class="card-container">
+  <div class="fitness-card">
+    <h2>Fitness</h2>
+    <h4>Active Minutes</h4>
+    <div id="chart"></div>
+
+    <h4>Exercise</h4>
+    <div id="exercisechart"></div>
+  </div>
+
+  <div class="food-card">
+    <h2>Food</h2>
+    <h4>Calories Intake</h4>
+    <div id="calorieschart"></div>
+  </div>
+
+  <div class="task-card">
+    <h2>Task</h2>
+    <h4>Tasks Completed</h4>
+    <div id="taskchart"></div>
+  </div>
+</div>

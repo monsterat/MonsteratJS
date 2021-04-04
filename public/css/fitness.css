@@ -1,16 +1,19 @@
 .fitness-container {
   display: flex;
   flex-direction: row;
+  min-height: 100%;
 }
 
 .left-container {
   width: 30%;
-  background-color: brown;
+  padding: 10px;
+  background-color: cadetblue;
+  height: 100%;
 }
 
 .right-container {
   width: 70%;
-  background-color: cadetblue;
+  padding: 0px 10px;
 }
 
 table {
@@ -26,5 +29,12 @@ td {
   vertical-align: middle;
 }
 
-body { padding-bottom: 70px; }
+.right-container-header {
+  display: flex;
+  flex-direction: row;
+}
 
+html,
+body {
+  height: 100%;
+}
