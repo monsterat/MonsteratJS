@@ -15,7 +15,7 @@ const morgan = require("morgan");
 app.use(morgan("dev"));
 
 // port
-const PORT = 3600;
+const PORT = 5000;
 
 // ejs template engine
 app.use(expressLayouts);
