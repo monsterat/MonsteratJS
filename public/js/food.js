@@ -25,7 +25,6 @@ for (z = 1; z < 8; z++) {
   var tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + dateCounter);
   //console.log(formatDate(tomorrow));
-  document.getElementById("foodHistoryTable").rows[2].cells[3].textContent = "Meallskvnbjgnkrflek;dklvsmknfmlvs";
   document.getElementById("foodHistoryTable").rows[1].cells[z].textContent = formatDate(tomorrow);
   console.log(document.getElementById("foodHistoryTable").rows[1].cells[z].textContent);
   var dayName = days[tomorrow.getDay()];
@@ -253,10 +252,10 @@ for ( sss = 2; sss < 5; sss++){
   totalProtein += parseInt(protein);
   console.log(totalProtein);
   console.log(totalCalorie);
-  if (cellCol === 1){
-    document.getElementById("foodHistoryTable").rows[5].cells[cellCol].textContent = "Calories: " + totalCalorie + "\n\n Proteins: " + totalProtein; 
-  }
-  $('#addMealModal').modal('hide');
+    document.getElementById("foodHistoryTable").rows[5].cells[cellCol].textContent = "Calories: " + totalCalorie + "\n\n\n\n Proteins: " + totalProtein; 
+  
+
+
 }
 
 
