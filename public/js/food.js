@@ -1,5 +1,72 @@
 console.log("HELLO WORLD!");
 
+var foodList = [];
+var totalCalorie = 0;
+var totalProtein = 0;
+var foodModal = document.getElementById("addMealModal");
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var i = 0;
+var button = document.getElementById("addMealButton");
+function formatDate(date) {
+  var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [year, month, day].join('-');
+}
+var dateCounter = 0;
+for (z = 1; z < 8; z++) {
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + dateCounter);
+  //console.log(formatDate(tomorrow));
+  document.getElementById("foodHistoryTable").rows[2].cells[3].textContent = "Meallskvnbjgnkrflek;dklvsmknfmlvs";
+  document.getElementById("foodHistoryTable").rows[1].cells[z].textContent = formatDate(tomorrow);
+  console.log(document.getElementById("foodHistoryTable").rows[1].cells[z].textContent);
+  var dayName = days[tomorrow.getDay()];
+  console.log(dayName);
+  document.getElementById("foodHistoryTable").rows[0].cells[z].textContent = dayName;
+  dateCounter++;
+}
+
+button.addEventListener("click", function () {
+
+  //create task object
+  //create task list rows
+  //addItemToTable(foodList);
+
+})
+
+
+function addItemToTable(taskList) {
+  var tbodyForMeals = document.getElementById("tbodyForTasks");
+  var myActions = "<a onclick='deleteItem(" + taskList[i] + ")' href='#'>Delete This One</a>";
+
+  var preparedRowHTML = "<tr>";
+  preparedRowHTML += "<td>" + taskList[i]["Task Name"] + "</td>";
+  preparedRowHTML += "<td>" + taskList[i]["Due Date"] + "</td>";
+  preparedRowHTML += "<td>" + taskList[i]["Difficulty"] + "</td>";
+  preparedRowHTML += "<td>" + myActions + "</td>";
+  preparedRowHTML += "</tr>";
+  i++;
+  tbodyForTasks.innerHTML += preparedRowHTML;
+
+}
+
+
+
+
+
+
+
+
+
+
 
 let d = new Date();
 let t = d.getDay();
@@ -28,10 +95,6 @@ function changeForm (form) {
 	commissionForm.className = 'inquiry-selection-active';
 }
 
-for(var i= 0;i<7;i++){
-
-
-}
 
 /*
 let x = document.getElementById("foodSearch").value;
@@ -153,23 +216,66 @@ $.ajax(settings1).done(function (response) {
     console.log(response);
 });
 */
-document.addEventListener("click", function(){
-  document.getElementById("demo").innerHTML = "Hello World!";
-});
+
 
 
 
 function myFunction() {
-var meal = document.getElementById("inputMealName1").value;
-let serving = document.getElementById("inputMealServings");
-let date = document.getElementById("inputDate");
-let calories = document.getElementById("inputCalories");
-let protein = document.getElementById("inputProtein");
-  console.log(meal);
-let che =   document.getElementById("foodHistoryTable").rows[2].cells[3];
-let aaa = "<td><div><p id=\"MBName\">Meal Name : None</p> </div></td>"
-document.getElementById("foodHistoryTable").rows[2].cells[3] = aaa;
 
-  console.log(document.getElementById("foodHistoryTable").rows[2].cells[3]);
+var meal = document.getElementById("inputMealName1").value;
+let serving = document.getElementById("inputMealServings").value;
+let date = document.getElementById("inputDate").value;
+let calories = document.getElementById("inputCalories").value;
+let protein = document.getElementById("inputProtein").value;
+let mealType = document.getElementById("mealTypeDropdown").value;
+var inputDate = new Date(date);
+//var dayName = days[inputDate.getDay()];
+
+
+var cellCol = getCell(date);
+var cellRow = 0;
+  console.log(cellCol);
+  console.log(mealType);
+  console.log(date);
+  console.log(calories);
+
+for ( sss = 2; sss < 5; sss++){
+  console.log(cellRow);
+  if(document.getElementById("foodHistoryTable").rows[sss].cells[0].textContent === mealType){
+    cellRow = sss;
+    console.log(cellRow);
+  }
+  
+}
+  console.log(cellRow);
+  document.getElementById("foodHistoryTable").rows[cellRow].cells[cellCol].textContent = meal;
+  totalCalorie += parseInt(calories);
+  totalProtein += parseInt(protein);
+  console.log(totalProtein);
+  console.log(totalCalorie);
+  if (cellCol === 1){
+    document.getElementById("foodHistoryTable").rows[5].cells[cellCol].textContent = "Calories: " + totalCalorie + "\n\n Proteins: " + totalProtein; 
+  }
+  $('#addMealModal').modal('hide');
+}
+
+
+function getCell(inputDate){
+  for (aa = 0; aa < 6; aa++){
+    
+    for (bb = 1; bb < 8; bb++){
+      var boolean = "FALSE"
+      console.log(document.getElementById("foodHistoryTable").rows[aa].cells[bb].textContent);
+      if (document.getElementById("foodHistoryTable").rows[aa].cells[bb].textContent === inputDate){
+        boolean = "TRUE"
+        console.log(boolean);
+        return bb;
+        bb = 100;
+        aa = 100;
+      }
+    }
+    bb=0
+    
+  }
 }
 
