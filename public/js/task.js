@@ -7,7 +7,6 @@ var ul = document.querySelector("ul");
 var taskList = [];
 var i = 0;
 
-
 button.addEventListener("click", function () {
   var x = difficulty.selectedIndex;
   //create task object
@@ -22,21 +21,20 @@ button.addEventListener("click", function () {
 
 })
 
-function deleteItem(rowToDelete) {
-	console.log("deleteItem triggered for row = " + rowToDelete);
-	var itemToRemove = _.findWhere(listItems, {"id": rowToDelete});
-	listItems = _.without(listItems, itemToRemove);
-	// IMPLEMENT LATER
+//delete row function from href
+function Deleteqry(id, _this) {
 
-	// go to DOM and delete the row
-	document.getElementById("rowForItem_" + rowToDelete).innerHTML = "";
+  $(_this).closest('tr').remove();
 }
 
+//add rows function
 function addItemToTable(taskList) {
   var tbodyForTasks = document.getElementById("tbodyForTasks");
-  var myActions = "<a onclick='deleteItem(" + taskList[i] + ")' href='#'>Delete This One</a>";
+  var myActions = "<a onclick='Deleteqry(" + i + ", this)' href='#'>Delete</a>";
+
 
   var preparedRowHTML = "<tr>";
+  preparedRowHTML += "<td> <input onclick='Deleteqry(" + i + ", this)' type='checkbox'id='checkbox'> </td>";
   preparedRowHTML += "<td>" + taskList[i]["Task Name"] + "</td>";
   preparedRowHTML += "<td>" + taskList[i]["Due Date"] + "</td>";
   preparedRowHTML += "<td>" + taskList[i]["Difficulty"] + "</td>";
@@ -45,4 +43,11 @@ function addItemToTable(taskList) {
   i++;
   tbodyForTasks.innerHTML += preparedRowHTML;
 
+
+  var check = document.getElementById("checkbox");
+  console.log(check.checked);
 }
+
+// $('tr:has(input[type="checkbox"]:checked)').remove();
+
+// $('#checkbox').is(':checked').remove();
