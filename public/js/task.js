@@ -3,10 +3,11 @@ var button = document.getElementById("btn");
 var inputTaskName = document.getElementById("input_newEntry");
 var date = document.getElementById("dueDate")
 var difficulty = document.getElementById("difficultyDropdown")
-var ul = document.querySelector("ul");
+var strikethrough = false;
 
 var taskList = [];
 var i = 0;
+
 
 button.addEventListener("click", function () {
   var x = difficulty.selectedIndex;
@@ -28,26 +29,38 @@ function Deleteqry(id, _this) {
   $(_this).closest('tr').remove();
 }
 
-//function to strikethrough
+//function to check if checkbox is checked
+// function validate() {
+//   var checkbox = document.getElementById("checkbox");
+//   if (checkbox.checked) {
+//     strikethrough = true;
+//     // console.log(strikethrough);
+//   }
+//   else if (checkbox.checked === false) {
+//     // alert("You didn't check it!");
+//     strikethrough = false;
+//     // console.log(false);
+//   }
+// }
 
+// onclick='validate()' 
 
 //add rows function
 function addItemToTable(taskList) {
   var tbodyForTasks = document.getElementById("tbodyForTasks");
   var myActions = "<a onclick='Deleteqry(" + i + ", this)' href='#'>Delete</a>";
 
-
   var preparedRowHTML = "<tr>";
-  preparedRowHTML += "<td> <input onclick='Deleteqry(" + i + ", this)' type='checkbox'id='checkbox'> </td>";
-  preparedRowHTML += "<td>" + taskList[i]["Task Name"] + "</td>";
+  preparedRowHTML += "<td><input type='checkbox' id='checkbox'><label for='checkbox'><span class='custom-checkbox'></span>" + taskList[i]["Task Name"] + "</td>";
   preparedRowHTML += "<td>" + taskList[i]["Due Date"] + "</td>";
   preparedRowHTML += "<td>" + taskList[i]["Difficulty"] + "</td>";
   preparedRowHTML += "<td>" + myActions + "</td>";
   preparedRowHTML += "</tr>";
   i++;
   tbodyForTasks.innerHTML += preparedRowHTML;
-
-  var check = document.getElementById("checkbox");
-  console.log(check.checked);
+  console.log(taskList)
+  // var check = document.getElementById("checkbox");
+  // console.log(check.checked);
 }
 
+onclick = 'Deleteqry(" + i + ", this)'
