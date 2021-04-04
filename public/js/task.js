@@ -1,3 +1,4 @@
+
 var button = document.getElementById("btn");
 var inputTaskName = document.getElementById("input_newEntry");
 var date = document.getElementById("dueDate")
@@ -48,6 +49,3 @@ function addItemToTable(taskList) {
   console.log(check.checked);
 }
 
-// $('tr:has(input[type="checkbox"]:checked)').remove();
-
-// $('#checkbox').is(':checked').remove();
