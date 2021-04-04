@@ -1,48 +1,51 @@
+
 var button = document.getElementById("btn");
 var inputTaskName = document.getElementById("input_newEntry");
+var date = document.getElementById("dueDate")
+var difficulty = document.getElementById("difficultyDropdown")
 var ul = document.querySelector("ul");
 
-button.addEventListener("click", function() {
+var taskList = [];
+var i = 0;
+
+button.addEventListener("click", function () {
+  var x = difficulty.selectedIndex;
   //create task object
-  var task = []
-    // var li = `<li class="list-group-item">
-    // <input class="checkbox" type="checkbox" value="" aria-label="...">
-    // ${inputTaskName.value};
-  // </li>`
-  // $(".list-group").append(li)
+  taskList.push({
+    "Task Name": inputTaskName.value,
+    "Due Date": date.value,
+    "Difficulty": document.getElementsByTagName("option")[x].textContent
+  });
+
+  //create task list rows
+  addItemToTable(taskList);
+
 })
 
+//delete row function from href
+function Deleteqry(id, _this) {
+
+  $(_this).closest('tr').remove();
+}
+
+//add rows function
+function addItemToTable(taskList) {
+  var tbodyForTasks = document.getElementById("tbodyForTasks");
+  var myActions = "<a onclick='Deleteqry(" + i + ", this)' href='#'>Delete</a>";
 
 
+  var preparedRowHTML = "<tr>";
+  preparedRowHTML += "<td> <input onclick='Deleteqry(" + i + ", this)' type='checkbox'id='checkbox'> </td>";
+  preparedRowHTML += "<td>" + taskList[i]["Task Name"] + "</td>";
+  preparedRowHTML += "<td>" + taskList[i]["Due Date"] + "</td>";
+  preparedRowHTML += "<td>" + taskList[i]["Difficulty"] + "</td>";
+  preparedRowHTML += "<td>" + myActions + "</td>";
+  preparedRowHTML += "</tr>";
+  i++;
+  tbodyForTasks.innerHTML += preparedRowHTML;
 
-// let tasker = {
-//     selectElements: function() {
-//       this.taskInput = document.getElementById("input-task");
-//       this.taskList = document.getElementById("tasks");
-//       this.taskListChildren = this.taskList.children;
-//       this.addButton = document.getElementById("add-task-btn");
-//       this.errorMessage = document.getElementById("error");
-//     },
-//     buildTask: function(){
-//         let taskListItem, taskCheckbox, taskValue, taskButton, taskTrush;
-//         taskListItem = document.createElement("li");
-//         taskListItem.setAttribute("class", "task");
-//         //checkbox
-//         taskCheckbox = document.createElement("input");
-//         taskCheckbox.setAttribute("type", "checkbox");
-//         //taskvalue
-//         taskValue = document.createTextNode(this.taskInput.Value);
-//         //deletebutton
-//         taskButton =  document.createElement("button");
-        
-//         //append elements to tasklist
-//         taskListItem.appendChild(taskCheckbox);
-//         taskListItem.appendChild(taskValue);
-//         taskListItem.appendChild(taskButton);
 
-//         //add task to tasklist
-//         this.taskList.appendChild(taskListItem);
-        
-//     }
-//   };
+  var check = document.getElementById("checkbox");
+  console.log(check.checked);
+}
 

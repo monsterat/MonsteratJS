@@ -11,15 +11,15 @@
     </div>
     <div class="form-group">
         <label for="formGroupExampleInput2">Deadline</label>
-        <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Add deadline">
+        <input type="date" class="form-control" id="dueDate" placeholder="Add deadline">
     </div>
     <div>
         <label for="difficultyLevel">Difficulty level</label>
-        <select class="dropdown" aria-label="Default select example">
+        <select class="dropdown" id="difficultyDropdown" aria-label="Default select example">
             <option selected>Select difficulty level</option>
             <option value="1">Easy</option>
             <option value="2">Medium</option>
-            <option value="3">Difficulty</option>
+            <option value="3">Difficult</option>
         </select>
     </div>
 
@@ -28,36 +28,25 @@
 </form>
 
 <!-- start of table list -->
-<table class="table">
+<table class="table" id="tasksTable">
     <thead>
         <tr>
+            <th scope="col" id="checkboxxx"></th>
             <th scope="col">Task Name</th>
             <th scope="col">Due Date</th>
             <th scope="col">Difficulty</th>
         </tr>
     </thead>
-    <tbody>
-        <tr>
-            <td>
-                <ul class="list-group">
-                </ul>
-            </td>
-            <td>05/04/2021</td>
-            <td>Difficult</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-        </tr>
+    <tbody id="tbodyForTasks">
     </tbody>
 </table>
 
+<!-- <script src="jquery.min.js"></script>
+<script>
+    $('.table tbody').on('click','.href',function(){
+        $(this).closest('tr').remove();
+    });
+</script> -->
 
 
 
