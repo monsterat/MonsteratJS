@@ -1,0 +1,61 @@
+.card-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  margin: 20px 0px;
+  height: 100%;
+}
+
+.fitness-card {
+  background-color: chocolate;
+  padding: 20px;
+  width: 30%;
+  border-radius: 20px;
+}
+
+.food-card {
+  background-color: cornflowerblue;
+  padding: 20px;
+  width: 30%;
+  border-radius: 20px;
+}
+
+.task-card {
+  background-color: crimson;
+  padding: 20px;
+  width: 30%;
+  border-radius: 20px;
+}
+
+#chart {
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 650px;
+  margin: 25px auto;
+  border-radius: 8px;
+}
+
+#exercisechart {
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 650px;
+  margin: 25px auto;
+  border-radius: 8px;
+}
+
+#calorieschart {
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 650px;
+  margin: 25px auto;
+  border-radius: 8px;
+}
+
+#taskchart {
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 650px;
+  margin: 25px auto;
+  border-radius: 8px;
+}
+
+h2 {
+  font-weight: 700;
+}
